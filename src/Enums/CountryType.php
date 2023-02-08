@@ -15,9 +15,9 @@ namespace Aminkhoshzahmat\CountryCode\Enums;
 
 use function define;
 
-define('COUNTRY_CODE', 'code', true);
-define('COUNTRY_PHONE', 'phone', true);
-define('COUNTRY_NAME', 'name', true);
+define('COUNTRY_CODE', 'code');
+define('COUNTRY_PHONE', 'phone');
+define('COUNTRY_NAME', 'name');
 
 enum CountryType
 {
