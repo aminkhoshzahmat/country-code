@@ -1,10 +1,23 @@
 <?php
 
-namespace App\Entity\Enums;
+/**
+ * This file is part of the aminkhoshzahmat/country-code project.
+ *
+ * @copyright (c) Amin Khoshzahmat <aminkhoshzahmat@gmail.com>
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ *
+ * @package Aminkhoshzahmat\CountryCode
+ */
 
-define("COUNTRY_CODE", 'code');
-define("COUNTRY_PHONE", 'phone');
-define("COUNTRY_NAME", 'name');
+namespace Aminkhoshzahmat\CountryCode\Enums;
+
+use function define;
+
+define('COUNTRY_CODE', 'code', true);
+define('COUNTRY_PHONE', 'phone', true);
+define('COUNTRY_NAME', 'name', true);
 
 enum CountryType
 {
@@ -274,11 +287,9 @@ enum CountryType
         return $this->getData(COUNTRY_NAME);
     }
 
-    private function getData($type)
+    private function getData($type): string
     {
-
         return match ($this) {
-
             self::BANGLADESH => [COUNTRY_NAME => 'Bangladesh', COUNTRY_CODE => 'BD', COUNTRY_PHONE => '880'][$type],
             self::BELGIUM => [COUNTRY_NAME => 'Belgium', COUNTRY_CODE => 'BE', COUNTRY_PHONE => '32'][$type],
             self::BURKINA_FASO => [COUNTRY_NAME => 'Burkina Faso', COUNTRY_CODE => 'BF', COUNTRY_PHONE => '226'][$type],
@@ -529,9 +540,6 @@ enum CountryType
             self::UKRAINE => [COUNTRY_NAME => 'Ukraine', COUNTRY_CODE => 'UA', COUNTRY_PHONE => '380'][$type],
             self::QATAR => [COUNTRY_NAME => 'Qatar', COUNTRY_CODE => 'QA', COUNTRY_PHONE => '974'][$type],
             self::MOZAMBIQUE => [COUNTRY_NAME => 'Mozambique', COUNTRY_CODE => 'MZ', COUNTRY_PHONE => '258'][$type],
-
         };
     }
-
 }
-
